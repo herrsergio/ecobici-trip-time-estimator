@@ -1,0 +1,44 @@
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+extend-exclude = [".venv", "artifacts", "data"]
+
+[tool.ruff.lint]
+select = [
+    "E",    # pycodestyle errors
+    "W",    # pycodestyle warnings
+    "F",    # pyflakes (unused imports, undefined names)
+    "I",    # isort (import order)
+    "B",    # flake8-bugbear (likely bugs / design issues)
+    "UP",   # pyupgrade (modernize syntax)
+    "SIM",  # flake8-simplify
+    "C4",   # flake8-comprehensions
+    "PIE",  # flake8-pie (misc lints)
+    "RUF",  # ruff-specific rules
+    "D",    # pydocstyle (PEP 257)
+    "NPY",  # NumPy-specific rules
+    "PD",   # pandas-vet
+]
+ignore = [
+    "D203",  # one-blank-line-before-class: conflicts with D211
+    "D213",  # multi-line-summary-second-line: conflicts with D212
+    "D100",  # missing module docstring (we add to scripts but not __init__-like files)
+    "D104",  # missing package docstring
+    "PD010", # `.pivot_table` recommendation (we don't use it)
+]
+
+[tool.ruff.lint.per-file-ignores]
+"scripts/*.py" = [
+    "D205",  # 1 blank line between summary and description (style preference)
+]
+
+[tool.ruff.lint.isort]
+known-first-party = ["features"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "lf"

@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Ruff
+.ruff_cache/
+
+# Generated pipeline outputs (parquet, models, encoders, meta files)
+artifacts/
+
+# Raw Ecobici data files — large, publicly downloadable from
+# https://ecobici.cdmx.gob.mx/datos-abiertos/
+data/*.csv.xz
+data/*.csv
+data/*.csv.gz
+
+# Editors / IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Claude Code local overrides (keep .claude/settings.json shared, ignore the
+# *.local.json variants)
+.claude/settings.local.json
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# macOS
+.DS_Store
